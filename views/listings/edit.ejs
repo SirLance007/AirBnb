@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate") -%>
+
+    <body>
+        <br><br>
+        <div class="row">
+            <div class="col-8 offset-2">
+                <h1>Create a New Listing</h1>
+                <form method="POST" action="/listings/<%=listing._id%>/edit?_method=PUT" novalidate class="needs-validation">
+                    <!-- Image Input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="image-url">Image Link</label>
+                        <input class="form-control" type="url" value="<%=listing.image.url%>" id="image-url"
+                            name="listing[image]">
+                    </div>
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input required class="form-control" value="<%=listing.title%>" type="text"
+                            name="listing[title]" id="title">
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <!-- Price -->
+                        <div class="mb-3 col-md-4">
+                            <label class="form-label" for="price">Price</label>
+                            <input required class="form-control" name="listing[price]" type="number"
+                                value="<%=listing.price%>" id="price">
+                        </div>
+                        <!-- Country -->
+                        <div class="mb-3 col-md-8">
+                            <label class="form-label" for="country">Country</label>
+                            <input required class="form-control" value="<%=listing.country%>" id="country"
+                                name="listing[country]">
+                        </div>
+                    </div>
+                    <!-- Location -->
+                    <div class="mb-3">
+                        <label class="form-label" for="location">Location</label>
+                        <input required class="form-control" value="<%=listing.location%>" type="text"
+                            name="listing[location]" id="location">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-dark add-btn" type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+        <br>
+    </body>
+    <script>
+        (() => {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+    
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
+    </script>
+    <!-- <script src="/public/js/script.js"></script> -->

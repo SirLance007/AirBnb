@@ -1,0 +1,88 @@
+body{
+    font-family: 'Plus Jakarta Sans', Courier, monospace !important;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    height: 4rem;
+}
+
+.fa-compass{
+    color: #fe424d;
+    font-size: 1.5rem;
+}
+
+.nav-link{
+    color: #222222 !important;
+}
+
+/* Footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+
+}
+.f-info-links a:hover{
+    text-decoration: underline;    
+}
+
+.f-info-links{
+    width: 100%;
+}
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.f-info-socials , .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.f-info{
+    height: 2rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+.card{
+    border: none !important;
+    margin-bottom: 2rem !important;
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+    text-decoration: none !important;
+}
+.listing-link{
+    text-decoration: none !important;
+}
+ /* Container to control the image size */
+ .card {
+    width: 100%; /* Adjust as needed */
+    overflow: hidden; /* Hide the overflow */
+}
+.card-images{
+    transition: transform 0.3s ease; /* Smooth scaling transition */
+}
+.card-images:hover{
+    transform: scale(0.93);
+    border-radius: 1rem;
+     /* Increase the scale on hover */
+}
+.show-image{
+    height: 30vh;
+}

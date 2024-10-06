@@ -1,0 +1,77 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+    <div class="row">
+        <div class="col-6 offset-2">
+            <h1>Create a New Listing</h1>
+            <form action="/listings/new" method="POST" novalidate 
+            class="needs-validation">
+                <!-- Title Input -->
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title:</label><br>
+                    <input class="form-control" type="text" id="title" name="listing[title]" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid title.
+                    </div>
+                </div>
+
+                <!-- Description Text Area -->
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description:</label><br>
+                    <input type="text" class="form-control" name="listing[description]" id="description" required>
+                    <div class="invalid-feedback">
+                        Please enter a description title.
+                    </div>
+                </div>
+
+                <!-- Image URL Input -->
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image URL:</label><br>
+                    <input class="form-control" type="url" id="image" name="listing[image]" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid image url.
+                    </div>
+                </div>
+
+                <!-- Price Input -->
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price:</label><br>
+                    <input class="form-control" type="number" id="price" name="listing[price]" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid price.
+                    </div>
+                </div>
+
+                <!-- Country Input -->
+                <div class="mb-3">
+                    <label class="form-label" for="country">Country:</label><br>
+                    <input class="form-control" type="text" id="country" name="listing[country]" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="btn btn-dark" type="submit">Submit Listing</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    (() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+<!-- <script src="/public/js/script.js"></script> -->
